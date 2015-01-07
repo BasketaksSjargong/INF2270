@@ -1,0 +1,60 @@
+\chapter{A Tour of Computer Systems}
+
+\section{Information is Bits + Context}
+
+A \textit{source program} is a sequence of \textit{bits}, each with a value of 0 or 1, organized in 8-bit chunks called \textit{bytes}.
+Files that consist exclusively of ASCII characters are known as \textit{text files}. All other files are known as \textit{binary files}.
+
+All information in a system is represented as a bunch of bits.
+
+\section{Programs Are Translated by Other Programs into Different Forms}
+
+In order for a machine to understand the instructions written in a high-level C program,
+the program must first be compiled into a sequence of \textit{machine-language} instructions. The result is an \textit{executable object program}.
+This process is performed by a \textit{compiler driver}, and is done in four steps:
+
+\begin{enumerate}
+    \item
+      \textit{Preprocessing Phase}. The preprocessor (cpp) modifies the
+      original C program according to directives (starting with \# in the
+      source code). The result is is another C program (usually with the .i
+      extension).
+
+    \item
+      \textit{Compilation phase}. The compiler (cc1) translates the .i file
+      into an \textit{assembly-language program} that contains machine-language
+      instructions (usually with the .s extension).
+
+    \item
+      \textit{Assembly phase}. The assembler (as) packages the machine-language
+      instructions into a \textit{relocatable object program}. This is a binary
+      file (usually with the .o extension).
+
+    \item
+      \textit{Linking phase}. The linker (ld) merges separate precompiled files
+      (.o files) that the C program uses. This results in an \textit{executable
+      object file} that can be executed by the system.
+
+\end{enumerate}
+
+\section{It Pays to Understand How Compilation Systems Work}
+
+There are some important reasons why programmers need to understand how compilation
+systems work. Here is a non-exhaustive list: 
+
+\begin{enumerate}
+  \item \textit{Optimizing program performance}. Is a switch-statement always
+    better than a sequence of if-else statements? Is a while-loop more
+    efficient than a for-loop? What is the difference in accessing local or
+    global variables in terms of performance?
+
+  \item \textit{Understanding link-time errors}. What does it mean when the
+    linker reports that it cannot resolve a reference? Difference between a
+    static and a global variable?  What happens if you define two global
+    variables in different files with the same name?
+
+  \item \textit{Avoiding security holes}. Learning to understand the
+    consequences of the way data and control information are stored on the
+    stack.
+
+\end{enumerate}
