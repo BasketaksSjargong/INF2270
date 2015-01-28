@@ -4,7 +4,6 @@
 int strcmpu(unsigned char s1[], unsigned char s2[]) {
   int a = strlen(s1);
   int b = strlen(s2);
-  printf("%d%d\n", a, b);
 
   int i, n;
   n = a;
