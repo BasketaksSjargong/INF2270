@@ -1,0 +1,5 @@
+Så lenge man jobber innenfor verdiene 0-127 så vil 'char' datatypen være greit.
+Signed chars gir minst -127 til 127.  Unsigned chars gir minst 0 til 255.
+Holder vi oss innenfor 0-127 vil alle datatypene kunne fungere, men char er den
+som er litt usikker med tanke på heltallsverdien, så man skal være litt
+forsiktig med å bruke char i ulikheter.
